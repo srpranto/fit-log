@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Dumbbell } from "lucide-react";
+import { ArrowDown, Dumbbell } from "lucide-react";
 
 export function Hero() {
   return (
@@ -29,10 +29,11 @@ export function Hero() {
               <div>
                 <a
                   href="#library"
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-[#ccff00] px-7 font-display text-xs font-bold uppercase tracking-wider text-black transition-colors hover:bg-[#b8e600]"
+                  className="group inline-flex h-11 max-w-full items-center justify-center gap-2 rounded-lg bg-[#ccff00] px-5 sm:px-7 font-display text-xs font-bold uppercase tracking-wider text-black transition-colors hover:bg-[#b8e600]"
                 >
-                  <Dumbbell className="h-4 w-4" />
-                  <span>BROWSE WORKOUTS</span>
+                  <Dumbbell className="h-4 w-4 shrink-0" />
+                  <span className="whitespace-nowrap">BROWSE WORKOUTS</span>
+                  <ArrowDown className="h-3.5 w-3.5 shrink-0 transition-transform duration-200 group-hover:translate-y-0.5" />
                 </a>
               </div>
             </div>
