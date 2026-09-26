@@ -11,9 +11,9 @@ export function Footer() {
             alt="FitLog logo"
             width={24}
             height={24}
-            className="h-6 w-6 object-contain"
+            className="h-5 w-5 object-contain sm:h-6 sm:w-6"
           />
-          <span className="font-display text-lg font-bold tracking-wider text-white">
+          <span className="font-display text-lg font-bold tracking-wider text-white sm:text-xl">
             FITLOG
           </span>
         </Link>
