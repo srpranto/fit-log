@@ -16,27 +16,19 @@ export function DetailActions({ workoutId }: DetailActionsProps) {
   const inSaved = isSaved(workoutId);
 
   const handleAddToPlan = () => {
-    if (inPlan) {
-      toast.info("This workout is already in today's plan");
+    if (inPlan || isPlanFull) {
       return;
     }
-    if (isPlanFull) {
-      toast.error("Today's plan is capped at 5 lifts. Finish one first!");
-      return;
-    }
-    const success = addToPlan(workoutId);
-    if (success) {
+    if (addToPlan(workoutId)) {
       toast.success("Added to today's plan");
     }
   };
 
   const handleSaveForLater = () => {
     if (inSaved) {
-      toast.info("This workout is already saved");
       return;
     }
-    const success = addToSaved(workoutId);
-    if (success) {
+    if (addToSaved(workoutId)) {
       toast.success("Saved for later");
     }
   };

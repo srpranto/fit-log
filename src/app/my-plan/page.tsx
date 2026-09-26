@@ -27,6 +27,12 @@ import type { Workout } from "@/lib/types";
 
 type SortOption = "duration" | "calories" | "rating";
 
+const SORT_LABELS: Record<SortOption, string> = {
+  duration: "Duration",
+  calories: "Calories",
+  rating: "Rating",
+};
+
 const SORT_OPTIONS: { id: SortOption; label: string }[] = [
   { id: "duration", label: "Duration" },
   { id: "calories", label: "Calories" },
@@ -203,7 +209,7 @@ function MyPlanContent() {
 
             <DropdownMenu>
               <DropdownMenuTrigger className="inline-flex h-9 cursor-pointer items-center justify-between gap-2 rounded-lg border border-white/10 bg-[#15171d] px-4 font-display text-xs font-bold uppercase tracking-wider text-white transition-colors hover:border-[#ccff00] hover:text-[#ccff00]">
-                <span>Sort By: {SORT_OPTIONS.find((option) => option.id === sortBy)?.label ?? "Duration"}</span>
+                <span>Sort By: {SORT_LABELS[sortBy]}</span>
                 <ChevronDown className="h-3.5 w-3.5" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
